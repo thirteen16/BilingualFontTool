@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+release/
+output/
+publish/
+*.exe
+*.zip
+settings.json
+*.previous.py
+test_*.py
+verify_*.py
+.publish*
