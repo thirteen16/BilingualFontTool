@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_all
 
-datas = []
+datas = [('assets/app.ico', 'assets')]
 binaries = []
 hiddenimports = []
 tmp_ret = collect_all('fontTools')
@@ -30,6 +30,7 @@ exe = EXE(
     a.datas,
     [],
     name='BilingualFontTool',
+    icon='assets/app.ico',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageTk
 from font_engine import faces, build
 
 ROOT = Path(sys.executable).parent if getattr(sys, 'frozen', False) else Path(__file__).parent
+RESOURCES = Path(getattr(sys, '_MEIPASS', Path(__file__).parent))
 SAMPLE = '中文界面 · 文件管理器 · 设置\nWindows Settings  ABC abc  0123456789\n文件 File  编辑 Edit  查看 View\n你好，世界！Hello, world!  ￥128.00'
 
 
@@ -24,6 +25,7 @@ class App:
         self.output = None
         self.busy = False
         root.title('字体合成 · Font Studio')
+        root.iconbitmap(default=str(RESOURCES / 'assets' / 'app.ico'))
         self.scale = max(1, root.winfo_fpixels('1i') / 96)
         px = lambda n: round(n * self.scale)
         self.px = px
